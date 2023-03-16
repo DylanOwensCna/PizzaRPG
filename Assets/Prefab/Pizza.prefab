@@ -46,7 +46,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.07780656, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -57,7 +57,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.24, y: 0.65}
+  m_Size: {x: 0.39561313, y: 0.65}
   m_EdgeRadius: 0
 --- !u!114 &6212838987029004152
 MonoBehaviour:
@@ -72,7 +72,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cutterCollider: {fileID: 5565001352870742966}
-  damage: 2
+  cutterDamage: 2
 --- !u!1 &8884134875498120874
 GameObject:
   m_ObjectHideFlags: 0
@@ -205,6 +205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 520b15fdb9ced374db16b1a3393ebafe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cutterHitbox: {fileID: 5739320529743852362}
   cutterAttack: {fileID: 6212838987029004152}
   moveSpeed: 5
   collisionOffset: 0.05
@@ -230,19 +231,19 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8884134875498120874}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 5
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!70 &3161984744350282536
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

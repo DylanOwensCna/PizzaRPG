@@ -5,10 +5,17 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    public float maxSpeed = 2.2f;
-    public CutterAttack cutterAttack;
+    // public float maxSpeed = 2.2f;
+
+    public GameObject cutterHitbox;
+
+    Collider2D cuttterCollider;
+
+    // public CutterHitbox cutterAttack;
     public float moveSpeed = 1f;
     public float collisionOffset = 0.05f;
+
+    // public float idleFriction = 0.9f;
     public ContactFilter2D movementFilter;
 
     Vector2 movementInput;
@@ -29,14 +36,20 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        cuttterCollider = cutterHitbox.GetComponent<Collider2D>();
     }
+
 
     private void FixedUpdate() 
     {
         if(canMove){
             if(movementInput != Vector2.zero){
             bool success = TryMove(movementInput);
-
+            // rb.velocity = Vector2.ClampMagnitude(rb.velocity + (movementInput *moveSpeed *Time.deltaTime),maxSpeed);
+            // }else {
+            //     rb.velocity = Vector2.Lerp(rb.velocity, Vector2.zero, idleFriction);
+            // }
+    // }
             if(!success) 
             {
                 success = TryMove(new Vector2(movementInput.x, 0));
@@ -96,16 +109,16 @@ public class PlayerController : MonoBehaviour
     public void CutterAttack() {
         LockMovement();
 
-        if(spriteRenderer.flipX == true) {
-            cutterAttack.AttackLeft();
-        } else {
-            cutterAttack.AttackRight();
-        }
+        // if(spriteRenderer.flipX == true) {
+        //     cutterAttack.AttackLeft();
+        // } else {
+        //     cutterAttack.AttackRight();
+        // }
     }
 
     public void EndCutterAttack() {
         UnlockMovement();
-        cutterAttack.StopAttack();
+        // cutterAttack.StopAttack();
     }
 
     public void LockMovement() {
