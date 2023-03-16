@@ -8,12 +8,12 @@ public class CutterHitbox : MonoBehaviour
 
     public float cutterDamage = 2f;
 
-    Vector2 rightAttackOffset;
+    // Vector2 rightAttackOffset;
     private void Start() {
         if(cutterCollider == null){
             Debug.LogWarning("Cutter Collider not set!");
         }
-        rightAttackOffset = transform.position;
+        // rightAttackOffset = transform.position;
         cutterCollider.GetComponent<Collider2D>();
     }
 
@@ -31,10 +31,10 @@ public class CutterHitbox : MonoBehaviour
     //     transform.localPosition = new Vector3(rightAttackOffset.x * -1, rightAttackOffset.y);
     // }
 
-    public void StopAttack() {
-        cutterCollider.enabled = false;
+    // public void StopAttack() {
+    //     cutterCollider.enabled = false;
 
-    }
+    // }
 
     void OnCollisonEnter2D(Collision2D col){
         col.collider.SendMessage("OnHit", cutterDamage);

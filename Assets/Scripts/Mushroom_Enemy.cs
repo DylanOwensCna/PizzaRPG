@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Mushroom_Enemy : MonoBehaviour
 {
-    public float health = 1;
+    public float health = 1f;
 
     void OnHit(float damage){
         Debug.Log("Mushroom Hit!" + damage);

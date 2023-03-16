@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
     List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
 
     bool canMove = true;
-
+    bool isMoving = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate() 
     {
-        if(canMove){
+        if(canMove == true && movementInput != Vector2.zero){
             if(movementInput != Vector2.zero){
             bool success = TryMove(movementInput);
             // rb.velocity = Vector2.ClampMagnitude(rb.velocity + (movementInput *moveSpeed *Time.deltaTime),maxSpeed);
