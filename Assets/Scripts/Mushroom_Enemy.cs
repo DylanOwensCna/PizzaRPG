@@ -4,23 +4,27 @@ using UnityEngine;
 
 public class Mushroom_Enemy : MonoBehaviour
 {
-    public float health = 1f;
 
-    void OnHit(float damage){
-        Debug.Log("Mushroom Hit!" + damage);
-    }
-    public float Health {
+public float Health {
         set {
-            health = value;
-            if(health <=0 ){
+            _health = value;
+            if(_health <=0 ){
                 // Defeated();
                 Destroy(gameObject);
             }
         }
         get {
-            return health;
+            return _health;
         }
     }
+
+    public float _health = 1;
+
+    void OnHit(float damage){
+        Debug.Log("Mushroom Hit for: " + damage);
+        Health -= damage;
+    }
+    
 
 
 // public void Defeated(){

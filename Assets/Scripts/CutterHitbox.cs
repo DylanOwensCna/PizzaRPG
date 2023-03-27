@@ -4,19 +4,21 @@ using UnityEngine;
 
 public class CutterHitbox : MonoBehaviour
 {
-    public Collider2D cutterCollider;
-
     public float cutterDamage = 2f;
 
+    public Collider2D cutterCollider;
+
+
     // Vector2 rightAttackOffset;
-    private void Start() {
+    void Start() {
         if(cutterCollider == null){
             Debug.LogWarning("Cutter Collider not set!");
         }
-        // rightAttackOffset = transform.position;
-        cutterCollider.GetComponent<Collider2D>();
     }
+    void OnCollisionEnter2D(Collision2D col){
+        col.collider.SendMessage("OnHit", cutterDamage);
 
+    }
 
     // public void AttackRight() {
     //     print("Attack Right");
@@ -36,10 +38,7 @@ public class CutterHitbox : MonoBehaviour
 
     // }
 
-    void OnCollisonEnter2D(Collision2D col){
-        col.collider.SendMessage("OnHit", cutterDamage);
-
-    }
+  
 
     // private void OnTriggerEnter2D(Collider2D collider){
     //     collider.SendMessage("OnHit", cutterDamage);

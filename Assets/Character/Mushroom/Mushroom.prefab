@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 738495298310774165}
   - component: {fileID: 2304149632571909162}
   - component: {fileID: 4878272067457364008}
+  - component: {fileID: 7320337706115715529}
   m_Layer: 0
   m_Name: Mushroom
   m_TagString: Enemy
@@ -144,3 +145,16 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7320337706115715529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7082063380036204392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b464d7b65522dd4c8f3701da9be258c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: 3
