@@ -43,7 +43,7 @@ BoxCollider2D:
   m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.07780656, y: 0}
@@ -71,8 +71,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bafbd049f0b867e44989d58ffa44243d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cutterDamage: 1
   cutterCollider: {fileID: 5565001352870742966}
-  cutterDamage: 2
 --- !u!1 &8884134875498120874
 GameObject:
   m_ObjectHideFlags: 0
@@ -206,7 +206,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cutterHitbox: {fileID: 5739320529743852362}
-  cutterAttack: {fileID: 6212838987029004152}
   moveSpeed: 5
   collisionOffset: 0.05
   movementFilter:

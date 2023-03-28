@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CutterHitbox : MonoBehaviour
 {
-    public float cutterDamage = 2f;
+    public float cutterDamage = 1f;
 
     public Collider2D cutterCollider;
 
@@ -15,6 +15,7 @@ public class CutterHitbox : MonoBehaviour
             Debug.LogWarning("Cutter Collider not set!");
         }
     }
+    
     void OnCollisionEnter2D(Collision2D col){
         col.collider.SendMessage("OnHit", cutterDamage);
 
