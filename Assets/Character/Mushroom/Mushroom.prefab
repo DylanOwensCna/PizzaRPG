@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2304149632571909162}
   - component: {fileID: 4878272067457364008}
   - component: {fileID: 7320337706115715529}
+  - component: {fileID: 7404436705934524550}
   m_Layer: 0
   m_Name: Mushroom
   m_TagString: Enemy
@@ -101,8 +102,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.041365623, y: 0}
-  m_Size: {x: 0.88082886, y: 1}
+  m_Offset: {x: -0.007257223, y: -0.04476714}
+  m_Size: {x: 0.7188144, y: 0.8166679}
   m_Direction: 0
 --- !u!50 &2304149632571909162
 Rigidbody2D:
@@ -155,6 +156,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3b464d7b65522dd4c8f3701da9be258c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+--- !u!114 &7404436705934524550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7082063380036204392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 689b02782c398624db0c8645df0acf6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 3
