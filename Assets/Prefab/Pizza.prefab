@@ -43,7 +43,7 @@ BoxCollider2D:
   m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.07780656, y: 0}
@@ -72,6 +72,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cutterDamage: 1
+  knockbackForce: 500
   cutterCollider: {fileID: 5565001352870742966}
 --- !u!1 &8884134875498120874
 GameObject:

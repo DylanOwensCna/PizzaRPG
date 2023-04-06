@@ -5,7 +5,7 @@ using UnityEngine;
 public class CutterHitbox : MonoBehaviour
 {
     public float cutterDamage = 1f;
-
+    public float knockbackForce = 5000f;
     public Collider2D cutterCollider;
 
 
@@ -16,39 +16,22 @@ public class CutterHitbox : MonoBehaviour
         }
     }
     
-    void OnCollisionEnter2D(Collision2D col){
-        col.collider.SendMessage("OnHit", cutterDamage);
+    void OnTriggerEnter2D(Collider2D col){
 
+    IDamageable damageableObject = col.GetComponent<IDamageable>();
+    if(damageableObject != null ) {
+
+    
+    Vector3 parentPosition = gameObject.GetComponentInParent<Transform>().position;
+        
+    Vector2 direction = (Vector2) (col.gameObject.transform.position - parentPosition).normalized;
+
+    Vector2 knockback = direction * knockbackForce;
+
+    damageableObject.OnHit(cutterDamage, knockback);
+    } else {
+        Debug.LogWarning("Collider does not implement IDamageable");
     }
 
-    // public void AttackRight() {
-    //     print("Attack Right");
-    //     cutterCollider.enabled=true;
-    //     transform.localPosition = rightAttackOffset;
-    // }
 
-    // public void AttackLeft(){
-    //     print("Attack Left");
-
-    //     cutterCollider.enabled=true;
-    //     transform.localPosition = new Vector3(rightAttackOffset.x * -1, rightAttackOffset.y);
-    // }
-
-    // public void StopAttack() {
-    //     cutterCollider.enabled = false;
-
-    // }
-
-  
-
-    // private void OnTriggerEnter2D(Collider2D collider){
-    //     collider.SendMessage("OnHit", cutterDamage);
-        // if(collider.tag == "Enemy"){
-        //     Enemy enemy = collider.GetComponent<Enemy>();
-
-        //     if(enemy != null){
-        //         enemy.Health -= damage;
-        //     }
-        }
-    // }
-// }
+    }
