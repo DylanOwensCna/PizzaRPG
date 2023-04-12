@@ -207,6 +207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 520b15fdb9ced374db16b1a3393ebafe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  borderController: {fileID: 0}
   cutterHitbox: {fileID: 5739320529743852362}
   moveSpeed: 5
   collisionOffset: 0.05
