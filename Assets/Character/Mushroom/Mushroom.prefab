@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7320337706115715529}
   - component: {fileID: 7404436705934524550}
   - component: {fileID: 5489376900636322875}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Mushroom
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -160,6 +160,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+  moveSpeed: 2
+  moveDuration: 2
+  playerTag: Player
 --- !u!114 &7404436705934524550
 MonoBehaviour:
   m_ObjectHideFlags: 0

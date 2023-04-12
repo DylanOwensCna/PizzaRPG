@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     // public float maxSpeed = 2.2f;
+public BorderController borderController;
 
     public GameObject cutterHitbox;
 
@@ -128,6 +129,10 @@ public class PlayerController : MonoBehaviour
     public void UnlockMovement() {
         canMove = true;
     }
+public void StopMovement()
+{
+    rb.velocity = Vector2.zero;
+}
 
     
 }
