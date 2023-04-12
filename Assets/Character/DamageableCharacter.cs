@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class DamageableCharacter : MonoBehaviour, IDamageable
 {
-
+public TMP_Text gameOverText; // Reference to the Text UI element
     Animator animator;
     Rigidbody2D rb;
     Collider2D physicsCollider;
@@ -61,7 +62,8 @@ public void OnObjectDestroyed() {
 private void Defeated() {
     Time.timeScale = 0; // Stop the game
     // Show the "Game Over" screen
-   
+   Debug.Log("Game Over");
+   gameOverText.enabled = true;
 }
 }
 
